@@ -12,7 +12,7 @@ h1{
 	margin: 0 5%;
 }
 .item {
-	border: #000 2px solid;
+	border: #000 3px solid;
 	background-color: #D5E8D4;
 	display: flex;
 	flex-direction: column;
@@ -22,8 +22,8 @@ h1{
 	font-size: 20px;
 	font-weight: 600;
 	padding: 0 1% 0 1%;
-	border-bottom: #000 2px solid;
-	border-left: #000 2px solid;
+	border-bottom: #000 3px solid;
+	border-left: #000 3px solid;
 }
 .text {
 	padding: 3% 8%;
@@ -41,7 +41,7 @@ h1{
 	background-color: #FAD9D5;
 }
 
-@media (max-width:768px){
+@media (max-width:992px){
 	
 	.items {
 		flex-wrap: wrap;
@@ -56,7 +56,7 @@ h1{
 	}
 }
 
-@media (max-width:425px){
+@media (max-width:768px){
 	.item {
 		max-width: none;
 	}
