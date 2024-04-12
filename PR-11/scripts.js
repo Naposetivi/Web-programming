@@ -92,43 +92,44 @@ const LibraryForSort = {
 		let obminy = 0;
 		let peremischennia = 0;
 
-		const partition = (arr, low, high) => {
+		const swap = (arr, i, j) => {
+			[arr[i], arr[j]] = [arr[j], arr[i]];
+			obminy++;
+		};
+
+		const sort = (arr, low, high) => {
+			if (low >= high) return;
+
 			const pivot = arr[Math.floor((low + high) / 2)];
 			let i = low;
 			let j = high;
 
 			while (i <= j) {
 				while ((ascending && arr[i] < pivot) || (!ascending && arr[i] > pivot)) {
-					obminy++;
 					i++;
 				}
 				while ((ascending && arr[j] > pivot) || (!ascending && arr[j] < pivot)) {
-					obminy++;
 					j--;
 				}
 				if (i <= j) {
+					swap(arr, i, j);
 					peremischennia++;
-					[arr[i], arr[j]] = [arr[j], arr[i]];
 					i++;
 					j--;
 				}
 			}
-			return i;
+
+			sort(arr, low, j);
+			sort(arr, i, high);
 		};
 
-		if (arr.length > 1) {
-			const index = partition(arr, low, high);
-			if (low < index - 1) {
-				this.quickSort(arr, low, index - 1, ascending);
-			}
-			if (index < high) {
-				this.quickSort(arr, index, high, ascending);
-			}
-		}
+		sort(arr, low, high);
 
 		console.log(`метод Хоара (скоростр..):  обмінів - ${obminy}, переміщення - ${peremischennia}`);
 		return arr;
 	},
+
+
 };
 
 
