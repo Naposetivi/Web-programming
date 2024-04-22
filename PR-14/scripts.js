@@ -20,22 +20,21 @@ function setupGame(index) {
 
 	currentSteps = 0;
 	updateSteps();
-	const game = games[index];
+	let game = games[index];
 	document.getElementById('minSteps').textContent = game.minimum_steps_to_win;
 
 	const board = document.getElementById('gameBoard');
 	board.innerHTML = '';
+
 	game.grid.forEach((row, r) => {
+		let tr = board.insertRow();
 		row.forEach((cell, c) => {
-			const cellElement = document.createElement('div');
-			cellElement.className = 'cell';
-			if (cell === 1) cellElement.classList.add('lightOn');
-			cellElement.addEventListener('click', () => toggleCells(r, c));
-			board.appendChild(cellElement);
+			let td = tr.insertCell();
+			td.className = cell === 1 ? 'lightOn' : '';
+			td.onclick = () => toggleLights(r, c, game.grid);
 		});
 	});
 }
-
 
 function toggleLights(r, c, grid) {
 	let toggle = (r, c) => {
@@ -84,3 +83,16 @@ function updateTime() {
 }
 
 window.onload = fetchGames;
+
+
+document.getElementById('newGame').addEventListener('click', () => {
+	localStorage.setItem('currentGameIndex', currentGameIndex);
+	location.reload();
+});
+
+const savedGameIndex = localStorage.getItem('currentGameIndex');
+if (savedGameIndex !== null) {
+	currentGameIndex = parseInt(savedGameIndex);
+}
+
+setupGame(currentGameIndex);
