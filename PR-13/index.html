@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Гаррі Нісенітниця і філосовський камінь</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<div id="setup">
+		<select id="skladnist">
+			<option value="easy">Як 2 пальці об асвальт</option>
+			<option value="medium">Медіум прожарка</option>
+			<option value="hard">Ох ти ж йо!</option>
+		</select>
+		<select id="color">
+			<option value="green">зелений</option>
+			<option value="red">Комуніст</option>
+			<option value="blue">Не натурал</option>
+			<option value="white">Білий</option>
+		</select>
+		<button id="startButton">Почати</button>
+	</div>
+	<div id="game" style="display: none;">
+		<div id="scoreBoard">
+			<span>Кліків: <span id="clicks">0</span></span>
+			<span>Час: <span id="timeLeft"></span> секунд</span>
+		</div>
+		<div id="targetArea"></div>
+		<div id="target"></div>
+	</div>
+</body>
+<script src="scripts.js"></script>
+
+</html>
