@@ -56,16 +56,12 @@ function toggleLights(r, c, grid) {
 
 	if (checkWin(grid)) {
 		clearInterval(timer);
-		alert("Ви виграли!");
+		alert("Ох ти ж йо! Та не може бути! Ти виграв!");
 	}
 }
 
 function checkWin(grid) {
 	return grid.every(row => row.every(cell => cell === 0));
-}
-
-function resetGame() {
-	setupGame(currentGameIndex);
 }
 
 function changeCombination() {
@@ -85,7 +81,7 @@ function updateTime() {
 window.onload = fetchGames;
 
 
-document.getElementById('newGame').addEventListener('click', () => {
+document.getElementById('resetGame').addEventListener('click', () => {
 	localStorage.setItem('currentGameIndex', currentGameIndex);
 	location.reload();
 });

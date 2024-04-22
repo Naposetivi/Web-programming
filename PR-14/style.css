@@ -11,11 +11,11 @@
 td {
 	width: 40px;
 	height: 40px;
-	background-color: #000;
-	border: 1px solid #fff;
+	background-color: #515050;
+	border: 1px solid #000000ad;
 	cursor: pointer;
 }
 
 .lightOn {
-	background-color: #fff;
+	background-color: #dfdedea1;
 }
