@@ -2,13 +2,10 @@ function calculate(operatia) {
 	var op1 = parseFloat(document.getElementById("op1").value);
 	var op2 = parseFloat(document.getElementById("op2").value);
 	var result;
-	if (!op1 && (operatia == "log-button" || operatia == "sin-button" || operatia == "tan-button")) {
-		result = "You must enter first operand(";
-		op2 = 0;
-	} else if (operatia == "log-button" || operatia == "sin-button" || operatia == "tan-button") {
+	if (operatia == "log-button" || operatia == "sin-button" || operatia == "tan-button") {
 		op2 = 0;
 	}
-	else if (!op1 || !op2) {
+	if (!op1 || !op2) {
 		result = "Type something!";
 	} else {
 		switch (operatia) {
