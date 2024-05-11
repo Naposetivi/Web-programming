@@ -4,8 +4,9 @@ function calculate(operatia) {
 	var result;
 	if (!op1 && operatia == "log-button" || operatia == "sin-button" || operatia == "tan-button") {
 		result = "You must enter first operand(";
+		op2 = 0;
 	}
-	else if (!op1 || !op2 && operatia !== "log-button" || operatia !== "sin-button" || operatia !== "tan-button") {
+	else if (!op1 || !op2) {
 		result = "Type something!";
 	} else {
 		switch (operatia) {
