@@ -3,7 +3,7 @@ function calculate(operatia) {
 	var op2 = parseFloat(document.getElementById("op2").value);
 	var result;
 	if (operatia == "log-button" || operatia == "sin-button" || operatia == "tan-button") {
-		op2 = 0;
+		op2 = 1;
 	}
 	if (!op1 || !op2) {
 		result = "Type something!";
