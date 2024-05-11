@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Exam</title>
+</head>
+
+<body>
+	<h1>Контрольна робота 3</h1>
+	<h2>Мороз Михайло Олексійович</h2>
+
+	<div>
+		<label for="op1">Operand 1:</label>
+		<input id="op1" type="text">
+		<label for="op2">Operand 2:</label>
+		<input id="op2" type="text">
+		<h3 id="res">Result:</h3>
+		<button onclick="calculate(id)" id="add-button">+</button>
+		<button onclick="calculate(id)" id="sub-button">-</button>
+		<button onclick="calculate(id)" id="mul-button">*</button>
+		<button onclick="calculate(id)" id="div-button">/</button>
+		<button onclick="calculate(id)" id="log-button">log</button>
+		<button onclick="calculate(id)" id="sin-button">sin</button>
+		<button onclick="calculate(id)" id="tan-button">tan</button>
+	</div>
+
+	<div id="content"></div>
+</body>
+
+<script src="script.js"></script>
+
+</html>
