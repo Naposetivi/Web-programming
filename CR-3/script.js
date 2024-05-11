@@ -25,18 +25,18 @@ function calculate(operatia) {
 				break;
 			case "log-button":
 				if (op1 > 0) {
-					Dovidka("log_x");
+					Dovidka("log");
 					result = Math.log(op1);
 				} else {
 					result = "operand 1 is less or equal to 0";
 				}
 				break;
 			case "sin-button":
-				Dovidka("sin_x");
+				Dovidka("sin");
 				result = Math.sin(op1);
 				break;
 			case "tan-button":
-				Dovidka("tan_x");
+				Dovidka("tan");
 				result = Math.tan(op1);
 				break;
 			default:
@@ -49,7 +49,7 @@ function calculate(operatia) {
 
 function Dovidka(operatia) {
 	fetch("Data/json/" + operatia + ".json")
-		.then(response => operatia.json())
+		.then(response => response.json())
 		.then(data => {
 			document.getElementById("content").innerHTML = `
 					<h3>${data.name}</h3>
